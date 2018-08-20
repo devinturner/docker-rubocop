@@ -2,7 +2,10 @@ FROM ruby:2.5.1
 
 WORKDIR /app
 
-RUN gem install rubocop rubocop-checkstyle_formatter --no-document
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+
+RUN bundle install -j 8
 
 COPY /docker-entrypoint.sh /
 
