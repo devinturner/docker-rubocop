@@ -2,8 +2,8 @@ FROM ruby:2.5.1
 
 WORKDIR /app
 
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY 0.58/Gemfile Gemfile
+COPY 0.58/Gemfile.lock Gemfile.lock
 
 RUN bundle install -j 8
 
